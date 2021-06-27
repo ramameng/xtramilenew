@@ -34,7 +34,7 @@ namespace Application.Cities
                     .Where(x => x.Country.Id == request.id)
                     .ProjectTo<CityDto>(_mapper.ConfigurationProvider)
                     .OrderBy(x => x.Name)
-                    .ToListAsync();
+                    .ToListAsync(cancellationToken);
             }
         }
     }

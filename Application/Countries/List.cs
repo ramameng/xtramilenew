@@ -30,7 +30,7 @@ namespace Application.Countries
                 return await _context.Countries
                     .OrderBy(x => x.Name)
                     .ProjectTo<CountryDto>(_mapper.ConfigurationProvider)
-                    .ToListAsync();
+                    .ToListAsync(cancellationToken);
             }
         }
     }
